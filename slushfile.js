@@ -43,7 +43,7 @@ var defaults = (function () {
     }
 
     return {
-        appName: workingDirName,
+        appName: _.slugify(workingDirName),
         userName: osUserName || format(user.name || ''),
         authorName: user.name || '',
         authorEmail: user.email || ''
