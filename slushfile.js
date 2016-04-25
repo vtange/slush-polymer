@@ -88,7 +88,7 @@ gulp.task('default', function (done) {
                     if (file.basename[0] === '_') {
                         file.basename = '.' + file.basename.slice(1);
                     }
-					else if(file.basename === "seed-element") {
+					if(file.basename === "seed-element") {
 						file.basename = answers.appName;
 					}
                 }))
