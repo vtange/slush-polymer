@@ -18,6 +18,10 @@ var gulp = require('gulp'),
     inquirer = require('inquirer'),
     path = require('path');
 
+function quoteWrap(str) {
+	return '"'+str+'"';
+}
+
 function condition(file) {
 	if (path.extname(file.path) === '.sh') {
         return false;
@@ -91,6 +95,7 @@ gulp.task('default', function (done) {
             if (!answers.moveon) {
                 return done();
             }
+			answers.authorFullName = quoteWrap(answers.appName);
             gulp.src([__dirname + '/templates/**', __dirname + '/templates/.*'])
                 .pipe(gulpif(condition,template(answers)))
                 .pipe(rename(function (file) {
