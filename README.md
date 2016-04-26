@@ -3,11 +3,12 @@
 [![Build Status](https://secure.travis-ci.org/vtange/slush-polymer.png?branch=master)](https://travis-ci.org/vtange/slush-polymer) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polymer.png)](http://badges.enytc.com/for/npm/slush-polymer)
 
 > generate a new polymer seed element, based on https://github.com/PolymerElements/seed-element
+
 > uses Travis CI to automatically help you generate your demo at Github Pages while you work on the master branch
 
 ## How to Use:
 
-1. Install `slush-polymer` globally:
+- Install `slush-polymer` globally:
 
 ```bash
 $ npm install -g slush-polymer
@@ -15,7 +16,7 @@ $ npm install -g slush-polymer
 
 ### Usage
 
-2. Create a Github Repo for your project, via the Github website or:
+- Create a Github Repo for your project, via the Github website or:
 
 ```bash
 $ mkdir your-new-element-name-here && cd your-new-element-name-here
@@ -25,17 +26,17 @@ $ git init
 ```
 
 #### !!Note: I highly recommend making sure your element's name is the same as your repo's name.
-3. Run the generator. Enter your details.
+- Run the generator. Enter your details.
 ```bash
 $ slush polymer
 ```
 
 ### Before pushing your first changes:
-3. Join Travis via Github and activate Travis for your project.
+- Join Travis via Github and activate Travis for your project.
 
 See: https://travis-ci.org/getting_started
 
-4. Add your credentials to Travis so Travis can push to gh-pages on your behalf.
+- Add your credentials to Travis so Travis can push to gh-pages on your behalf.
 
 Go to your repo settings in Travis and add these environment variables:
 
@@ -43,7 +44,7 @@ GH_REF => Is the repo url without the protocol prefix, like github.com/user_name
 
 GH_TOKEN => A secret token you can generate from your personal settings at Github -> called a "Personal access token"
 
-5. Work and push your changes to master branch as you normally would :)
+- Work and push your changes to master branch as you normally would :)
 
 ## This Generator uses Slush, more about Slush:
 
