@@ -95,7 +95,7 @@ gulp.task('default', function (done) {
             if (!answers.moveon) {
                 return done();
             }
-			answers.authorFullName = quoteWrap(answers.appName);
+			answers.authorFullName = quoteWrap(answers.authorName);
             gulp.src([__dirname + '/templates/**', __dirname + '/templates/.*'])
                 .pipe(gulpif(condition,template(answers)))
                 .pipe(rename(function (file) {
