@@ -43,7 +43,7 @@ var defaults = (function () {
     }
 
     return {
-        appName: _.slugify(workingDirName),
+        elementName: _.slugify(workingDirName),
         userName: osUserName || format(user.name || ''),
         authorName: user.name || '',
         authorEmail: user.email || ''
@@ -53,8 +53,8 @@ var defaults = (function () {
 gulp.task('default', function (done) {
     var prompts = [{
         name: 'elementName',
-        message: 'What is the name of your new element? (Must include at least one "-", ex: "new-element")',
-        default: defaults.appName
+        message: "What is your new element's name? (MUST have at least 1 '-')",
+        default: defaults.elementName
     }, {
         name: 'elementDesc',
         message: 'What does your element do?'
@@ -81,7 +81,6 @@ gulp.task('default', function (done) {
             if (!answers.moveon) {
                 return done();
             }
-            answers.appNameSlug = _.slugify(answers.appName);
             gulp.src([__dirname + '/templates/**', __dirname + '/templates/.*'])
                 //.pipe(template(answers))
                 .pipe(rename(function (file) {
@@ -89,7 +88,7 @@ gulp.task('default', function (done) {
                         file.basename = '.' + file.basename.slice(1);
                     }
 					if(file.basename === "seed-element") {
-						file.basename = answers.appName;
+						file.basename = answers.elementName;
 					}
                 }))
                 .pipe(conflict('./'))
