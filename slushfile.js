@@ -9,6 +9,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+	gulpif = require('gulp-if'),
     install = require('gulp-install'),
     conflict = require('gulp-conflict'),
     template = require('gulp-template'),
@@ -16,6 +17,15 @@ var gulp = require('gulp'),
     _ = require('underscore.string'),
     inquirer = require('inquirer'),
     path = require('path');
+
+function condition(file) {
+	if (path.extname(file.path) === '.sh') {
+        return false;
+    }
+	else{
+		return true;
+	}
+}
 
 function format(string) {
     var username = string.toLowerCase();
@@ -82,7 +92,7 @@ gulp.task('default', function (done) {
                 return done();
             }
             gulp.src([__dirname + '/templates/**', __dirname + '/templates/.*'])
-                //.pipe(template(answers))
+                .pipe(gulpif(condition,template(answers)))
                 .pipe(rename(function (file) {
                     if (file.basename[0] === '_') {
                         file.basename = '.' + file.basename.slice(1);
