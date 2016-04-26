@@ -3,18 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title><%= elementName %> Demo</title>
+    <title><%- elementName %> Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../<%= elementName %>.html">
   </head>
   <body>
 
-    <p>An example of <code>&lt;<%= elementName %>&gt;</code>&#58;</p>
+    <p>An example of <code>&lt;<%- elementName %>&gt;</code>&#58;</p>
 
     <button>Say Something</button>
 
     <<%= elementName %> author='{}' fancy>
-      <h2>Hello <%= elementName %></h2>
+      <h2>Hello <%- elementName %></h2>
     </<%= elementName %>>
 
     <script>
