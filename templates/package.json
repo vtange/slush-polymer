@@ -1,0 +1,26 @@
+{
+  "name": "<%= elementName %>",
+  "version": "1.0.0",
+  "description": "<%= elementDesc %>",
+  "main": "gulpFile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= github %>/<%= elementName %>.git"
+  },
+  "author": "<%= authorName %>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/<%= github %>/<%= elementName %>/issues"
+  },
+  "homepage": "https://github.com/<%= github %>/<%= elementName %>#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-vulcanize": "^6.1.0"
+  }
+}
